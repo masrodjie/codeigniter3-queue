@@ -36,9 +36,9 @@ class Queue
             'database.redis' => [
                 'cluster' => false,
                 'default' => [
-                    'host' => getenv('REDIS_HOST'),
-                    'port' => getenv('REDIS_PORT'),
-                    'database' => getenv('REDIS_DB'),
+                    'host' => (getenv('REDIS_HOST') != '' ? getenv('REDIS_HOST')  : $_ENV['REDIS_HOST']),
+                    'port' => (getenv('REDIS_PORT') != '' ? getenv('REDIS_PORT')  : $_ENV['REDIS_PORT']),
+                    'database' => (getenv('REDIS_DB') != '' ? getenv('REDIS_DB')  : $_ENV['REDIS_DB']),
                 ],
             ]
         ];
