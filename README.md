@@ -13,8 +13,10 @@ composer require masrodie/codeigniter3-queue
 
 Add redis config in .env. You can use dotenv package https://github.com/vlucas/phpdotenv
 ```
+REDIS_SCHEME=tcp
 REDIS_HOST=localhost
 REDIS_CLIENT=predis
+REDIS_USERNAME=
 REDIS_PASSWORD=null
 REDIS_PORT=6379
 REDIS_SCHEME=tcp

@@ -36,11 +36,12 @@ class Queue
             'database.redis' => [
                 'cluster' => false,
                 'default' => [
+                    'scheme' => (getenv('REDIS_SCHEME') != '' ? getenv('REDIS_SCHEME')  : $_ENV['REDIS_SCHEME']),
                     'host' => (getenv('REDIS_HOST') != '' ? getenv('REDIS_HOST')  : $_ENV['REDIS_HOST']),
                     'port' => (getenv('REDIS_PORT') != '' ? getenv('REDIS_PORT')  : $_ENV['REDIS_PORT']),
                     'database' => (getenv('REDIS_DB') != '' ? getenv('REDIS_DB')  : $_ENV['REDIS_DB']),
-                    'password' => (getenv('REDIS_PASSWORD') != '' ? getenv('REDIS_PASSWORD')  : NULL),
-                    'username' => (getenv('REDIS_USERNAME') != '' ? getenv('REDIS_USERNAME')  : 'default'),
+                    'password' => (getenv('REDIS_PASSWORD') != '' ? getenv('REDIS_PASSWORD')  : $_ENV['REDIS_PASSWORD']),
+                    'username' => (getenv('REDIS_USERNAME') != '' ? getenv('REDIS_USERNAME')  : $_ENV['REDIS_USERNAME']),
                 ],
             ]
         ];
